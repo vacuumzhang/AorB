@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
-		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
 		81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814C1A49DA1800E65899 /* ViewController.swift */; };
 		81BA81701A49DB6800E65899 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA816B1A49DB6800E65899 /* Bolts.framework */; };
@@ -20,11 +19,13 @@
 		F49FF7281C4E0EA100F6916A /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FF7271C4E0EA100F6916A /* QuestionViewController.swift */; };
 		F49FF72A1C4E130F00F6916A /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FF7291C4E130F00F6916A /* NewPostViewController.swift */; };
 		F49FF72C1C4E1B0500F6916A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FF72B1C4E1B0500F6916A /* PostViewController.swift */; };
+		F4C4A3651C54EB6500FC3E11 /* cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4A3641C54EB6500FC3E11 /* cell.swift */; };
+		F4C4A3691C54F31A00FC3E11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C4A3681C54F31A00FC3E11 /* Images.xcassets */; };
+		F4C4A36B1C54F3ED00FC3E11 /* keiko.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F4C4A36A1C54F3ED00FC3E11 /* keiko.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81BA81451A49DA1800E65899 /* AorB.demo.0.01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AorB.demo.0.01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81BA814A1A49DA1800E65899 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +41,9 @@
 		F49FF7271C4E0EA100F6916A /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		F49FF7291C4E130F00F6916A /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		F49FF72B1C4E1B0500F6916A /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		F4C4A3641C54EB6500FC3E11 /* cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cell.swift; sourceTree = "<group>"; };
+		F4C4A3681C54F31A00FC3E11 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F4C4A36A1C54F3ED00FC3E11 /* keiko.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = keiko.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,7 @@
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				814C3AC81B69877600E307BB /* Images.xcassets */,
+				F4C4A3681C54F31A00FC3E11 /* Images.xcassets */,
 				814C3AC91B69877600E307BB /* Info.plist */,
 			);
 			path = Resources;
@@ -95,9 +99,10 @@
 				F49FF72B1C4E1B0500F6916A /* PostViewController.swift */,
 				F49FF7291C4E130F00F6916A /* NewPostViewController.swift */,
 				F49FF7271C4E0EA100F6916A /* QuestionViewController.swift */,
+				F4C4A3641C54EB6500FC3E11 /* cell.swift */,
+				F4C4A36A1C54F3ED00FC3E11 /* keiko.jpeg */,
 			);
-			name = AorBProject;
-			path = ParseStarterProject;
+			path = AorBProject;
 			sourceTree = "<group>";
 		};
 		81BA816A1A49DB5600E65899 /* Frameworks */ = {
@@ -182,7 +187,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
-				814C3ACB1B69877600E307BB /* Images.xcassets in Resources */,
+				F4C4A36B1C54F3ED00FC3E11 /* keiko.jpeg in Resources */,
+				F4C4A3691C54F31A00FC3E11 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
+				F4C4A3651C54EB6500FC3E11 /* cell.swift in Sources */,
 				F49FF72A1C4E130F00F6916A /* NewPostViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 				F49FF7281C4E0EA100F6916A /* QuestionViewController.swift in Sources */,

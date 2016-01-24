@@ -12,6 +12,7 @@ import Parse
 
 var questionsTitles = [""]
 var questionIDs = [""]
+var questionsDescription = [""]
 
 
 class QuestionViewController: UIViewController {
@@ -53,6 +54,8 @@ class QuestionViewController: UIViewController {
                 
                 questionIDs.removeAll(keepCapacity: true)
                 
+                questionsDescription.removeAll(keepCapacity: true)
+                
                 for object in posts {
                     
                     if let post = object as PFObject? {
@@ -69,6 +72,7 @@ class QuestionViewController: UIViewController {
 //                        }
                         
                         questionsTitles.append(post["title"] as! String)
+                        questionsDescription.append(post["description"] as! String)
                         questionIDs.append(post.objectId!)
                         
                     }
@@ -111,16 +115,17 @@ class QuestionViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let myCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! cell
+
+        myCell.questionTitel.text = questionsTitles[indexPath.row]
+        myCell.questionDescription.text = questionsDescription[indexPath.row]
         
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
-        
-        cell.textLabel?.text = questionsTitles[indexPath.row]
-        
-        return cell
+        return myCell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("showQuestion", sender: self)
+//        not comment this show detial twice
+//        self.performSegueWithIdentifier("showQuestion", sender: self)
     }
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -135,8 +140,6 @@ class QuestionViewController: UIViewController {
 //        }
 //    }
     
-    override func viewDidAppear(animated: Bool) {
-        
-    }
+    
         
 }
