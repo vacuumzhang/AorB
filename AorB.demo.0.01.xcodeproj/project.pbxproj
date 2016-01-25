@@ -20,8 +20,9 @@
 		F49FF72A1C4E130F00F6916A /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FF7291C4E130F00F6916A /* NewPostViewController.swift */; };
 		F49FF72C1C4E1B0500F6916A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FF72B1C4E1B0500F6916A /* PostViewController.swift */; };
 		F4C4A3651C54EB6500FC3E11 /* cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C4A3641C54EB6500FC3E11 /* cell.swift */; };
-		F4C4A3691C54F31A00FC3E11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C4A3681C54F31A00FC3E11 /* Images.xcassets */; };
 		F4C4A36B1C54F3ED00FC3E11 /* keiko.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F4C4A36A1C54F3ED00FC3E11 /* keiko.jpeg */; };
+		F4FB75181C56E67700C05652 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FB75161C56E5EE00C05652 /* Images.xcassets */; };
+		F4FB751A1C56E6DA00C05652 /* loginBackGround.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F4FB75191C56E6DA00C05652 /* loginBackGround.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +43,9 @@
 		F49FF7291C4E130F00F6916A /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		F49FF72B1C4E1B0500F6916A /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		F4C4A3641C54EB6500FC3E11 /* cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cell.swift; sourceTree = "<group>"; };
-		F4C4A3681C54F31A00FC3E11 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F4C4A36A1C54F3ED00FC3E11 /* keiko.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = keiko.jpeg; sourceTree = "<group>"; };
+		F4FB75161C56E5EE00C05652 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F4FB75191C56E6DA00C05652 /* loginBackGround.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loginBackGround.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,8 @@
 		814C3AC51B69877600E307BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F4C4A3681C54F31A00FC3E11 /* Images.xcassets */,
+				F4FB75161C56E5EE00C05652 /* Images.xcassets */,
+				F4FB75191C56E6DA00C05652 /* loginBackGround.jpg */,
 				814C3AC91B69877600E307BB /* Info.plist */,
 			);
 			path = Resources;
@@ -186,9 +189,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4FB75181C56E67700C05652 /* Images.xcassets in Resources */,
 				814C3ACA1B69877600E307BB /* Main.storyboard in Resources */,
 				F4C4A36B1C54F3ED00FC3E11 /* keiko.jpeg in Resources */,
-				F4C4A3691C54F31A00FC3E11 /* Images.xcassets in Resources */,
+				F4FB751A1C56E6DA00C05652 /* loginBackGround.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
