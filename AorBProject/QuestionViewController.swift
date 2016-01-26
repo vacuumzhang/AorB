@@ -10,15 +10,61 @@ import Foundation
 import UIKit
 import Parse
 
-var questionsTitles = [""]
-var questionIDs = [""]
+var questionsTitles      = [""]
+var questionIDs          = [""]
 var questionsDescription = [""]
 
 
-class QuestionViewController: UIViewController {
+class QuestionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     @IBOutlet var questionTable: UITableView!
+    
+    var refresher: UIRefreshControl!
+    
+    func refresh() {
+        
+        var query = PFQuery(className: "Question")
+        
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            
+            if let posts = objects {
+                
+                questionsTitles.removeAll(keepCapacity: true)
+                
+                questionIDs.removeAll(keepCapacity: true)
+                
+                questionsDescription.removeAll(keepCapacity: true)
+                
+                for object in posts {
+                    
+                    if let post = object as PFObject? {
+                        
+                        //                        query.getObjectInBackgroundWithId(post.objectId!) { (object: PFObject?, error: NSError?) -> Void in
+                        //
+                        //                            if error != nil {
+                        //
+                        //                                print(error)
+                        //
+                        //                            } else if let temp = object {
+                        //
+                        //                            }
+                        //                        }
+                        
+                        questionsTitles.append(post["title"] as! String)
+                        questionsDescription.append(post["description"] as! String)
+                        questionIDs.append(post.objectId!)
+                        
+                    }
+                }
+            }
+            
+            
+            self.questionTable.reloadData()
+            self.refresher.endRefreshing()
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,49 +89,14 @@ class QuestionViewController: UIViewController {
 //                
 //            }
 //        }
+
+        refresher                 = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refresher.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+
+        self.questionTable.addSubview(refresher)
         
-        var query = PFQuery(className: "Question")
-        
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            
-            if let posts = objects {
-                
-                questionsTitles.removeAll(keepCapacity: true)
-                
-                questionIDs.removeAll(keepCapacity: true)
-                
-                questionsDescription.removeAll(keepCapacity: true)
-                
-                for object in posts {
-                    
-                    if let post = object as PFObject? {
-                        
-//                        query.getObjectInBackgroundWithId(post.objectId!) { (object: PFObject?, error: NSError?) -> Void in
-//                            
-//                            if error != nil {
-//                                
-//                                print(error)
-//                                
-//                            } else if let temp = object {
-//                                
-//                            }
-//                        }
-                        
-                        questionsTitles.append(post["title"] as! String)
-                        questionsDescription.append(post["description"] as! String)
-                        questionIDs.append(post.objectId!)
-                        
-                    }
-                }
-            }
-            
-            
-            self.questionTable.reloadData()
-        }
-        
-        
-        
-        
+        refresh()
     }
     
     override func didReceiveMemoryWarning() {
@@ -93,14 +104,19 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //        not comment this show detial twice
+        //        self.performSegueWithIdentifier("showQuestion", sender: self)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showQuestion") {
             
             var upcoming: PostViewController = segue.destinationViewController as! PostViewController
-            
-            let indexPath = self.questionTable.indexPathForSelectedRow!
-            
-            let postID = questionIDs[indexPath.row]
+
+            let indexPath                    = self.questionTable.indexPathForSelectedRow!
+
+            let postID                       = questionIDs[indexPath.row]
             
             upcoming.questionId = postID
         }
@@ -117,16 +133,13 @@ class QuestionViewController: UIViewController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let myCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! cell
 
-        myCell.questionTitel.text = questionsTitles[indexPath.row]
+        myCell.questionTitel.text       = questionsTitles[indexPath.row]
         myCell.questionDescription.text = questionsDescription[indexPath.row]
         
         return myCell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        not comment this show detial twice
-//        self.performSegueWithIdentifier("showQuestion", sender: self)
-    }
+    
     
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 //        if (segue.identifier == "showQuestion") {

@@ -19,6 +19,7 @@ class PostViewController: UIViewController {
     @IBOutlet weak var choiceB: UIButton!
     
     @IBOutlet weak var postDescription: UITextView!
+    
     var titleString: String!
     var questionId: String!
     
@@ -41,7 +42,8 @@ class PostViewController: UIViewController {
                 print(error)
                 
             } else if let post = object {
-                self.postTitle.text = post["title"] as? String
+                
+                self.postTitle.text       = post["title"] as? String
                 self.postDescription.text = post["description"] as! String
                 
                 self.choiceA.setTitle(post["choiceA"] as? String, forState: UIControlState.Normal)

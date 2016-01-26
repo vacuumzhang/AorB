@@ -43,7 +43,7 @@
 		F49FF7291C4E130F00F6916A /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		F49FF72B1C4E1B0500F6916A /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		F4C4A3641C54EB6500FC3E11 /* cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cell.swift; sourceTree = "<group>"; };
-		F4C4A36A1C54F3ED00FC3E11 /* keiko.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = keiko.jpeg; sourceTree = "<group>"; };
+		F4C4A36A1C54F3ED00FC3E11 /* keiko.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = keiko.jpeg; path = ../AorBProject/keiko.jpeg; sourceTree = "<group>"; };
 		F4FB75161C56E5EE00C05652 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F4FB75191C56E6DA00C05652 /* loginBackGround.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = loginBackGround.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				F4FB75161C56E5EE00C05652 /* Images.xcassets */,
+				F4C4A36A1C54F3ED00FC3E11 /* keiko.jpeg */,
 				F4FB75191C56E6DA00C05652 /* loginBackGround.jpg */,
 				814C3AC91B69877600E307BB /* Info.plist */,
 			);
@@ -103,7 +104,6 @@
 				F49FF7291C4E130F00F6916A /* NewPostViewController.swift */,
 				F49FF7271C4E0EA100F6916A /* QuestionViewController.swift */,
 				F4C4A3641C54EB6500FC3E11 /* cell.swift */,
-				F4C4A36A1C54F3ED00FC3E11 /* keiko.jpeg */,
 			);
 			path = AorBProject;
 			sourceTree = "<group>";

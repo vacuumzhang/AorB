@@ -18,11 +18,11 @@ class NewPostViewController: UIViewController, UITableViewDelegate {
     
     @IBAction func postQuestion(sender: AnyObject) {
         
-        var question = PFObject(className: "Question")
-        
-        question["title"] = questionTitel.text!
+        var question            = PFObject(className: "Question")
+
+        question["title"]       = questionTitel.text!
         question["description"] = questionDescription.text!
-        
+
         question.saveInBackgroundWithBlock { (sucess, error) -> Void in
             if sucess == true {
                 print("Object saved with ID \(question.objectId)")
@@ -31,9 +31,9 @@ class NewPostViewController: UIViewController, UITableViewDelegate {
                 print(error)
             }
         }
-        
+
         questionsTitles.append(questionTitel.text!)
-        questionTitel.text = ""
+        questionTitel.text      = ""
     }
     override func viewDidLoad() {
         super.viewDidLoad()
