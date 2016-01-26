@@ -325,6 +325,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="choiceA" destination="swj-jp-b8H" id="OGf-eN-q2a"/>
+                        <outlet property="choiceB" destination="lXf-aa-wnX" id="7WN-fM-d07"/>
                         <outlet property="questionDescription" destination="PDs-Df-oSR" id="H8k-MX-fca"/>
                         <outlet property="questionTitel" destination="xnC-rR-uyk" id="3bJ-Kc-YYw"/>
                     </connections>

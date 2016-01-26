@@ -16,13 +16,19 @@ class NewPostViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet var questionDescription: UITextView!
     
+    @IBOutlet weak var choiceA: UITextField!
+    
+    @IBOutlet weak var choiceB: UITextField!
+    
     @IBAction func postQuestion(sender: AnyObject) {
         
         var question            = PFObject(className: "Question")
 
         question["title"]       = questionTitel.text!
         question["description"] = questionDescription.text!
-
+        question["choiceA"]     = choiceA.text!
+        question["choiceB"]     = choiceB.text!
+        
         question.saveInBackgroundWithBlock { (sucess, error) -> Void in
             if sucess == true {
                 print("Object saved with ID \(question.objectId)")
